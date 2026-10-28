@@ -3,7 +3,18 @@
    - Reads the CSRF token from the non-HttpOnly csrf cookie and attaches it
      to every state-changing request, matching server/src/middleware/csrf.js.
    - Never assumes success: always checks response.ok and the `success` flag. */
-export const API_BASE_URL='http://localhost:4000/api';
+export const API_BASE_URL='https://hussle-with-aditya.onrender.com/api';
+
+/* The API lives on a different site than this SPA, so the browser will not let
+   this page read the API's csrf cookie. The server returns the same token in the
+   login / me response body instead; we keep it here for the tab's lifetime. */
+const CSRF_STORAGE_KEY='hwa_csrf_token';
+function getCsrfToken(){
+  try{return sessionStorage.getItem(CSRF_STORAGE_KEY)||readCookie('hwa_csrf')}catch{return readCookie('hwa_csrf')}
+}
+function setCsrfToken(token){
+  try{token?sessionStorage.setItem(CSRF_STORAGE_KEY,token):sessionStorage.removeItem(CSRF_STORAGE_KEY)}catch{/* storage unavailable */}
+}
 
 function readCookie(name){
   const match=document.cookie.match(new RegExp('(?:^|; )'+name+'=([^;]*)'));
@@ -17,7 +28,7 @@ export class ApiError extends Error{
 async function request(path,{method='GET',body}={}){
   const headers={'Content-Type':'application/json'};
   if(method!=='GET'){
-    const csrf=readCookie('hwa_csrf');
+    const csrf=getCsrfToken();
     if(csrf)headers['X-CSRF-Token']=csrf;
   }
   let res;
@@ -32,6 +43,8 @@ async function request(path,{method='GET',body}={}){
     const message=payload?.error?.message||('Request failed with status '+res.status);
     throw new ApiError(message,res.status,payload?.error?.code);
   }
+  if(payload.data&&typeof payload.data.csrfToken==='string')setCsrfToken(payload.data.csrfToken);
+  if(path==='/admin/auth/logout')setCsrfToken(null);
   return payload.data;
 }
 
