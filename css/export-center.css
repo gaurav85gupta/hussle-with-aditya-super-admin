@@ -1,0 +1,53 @@
+/* Export Center — reuses variables.css tokens; follows the same card/filter-bar/
+   btn/banner patterns as analytics.css and base.css rather than introducing a
+   parallel visual language. */
+
+.export-header{margin-bottom:22px}
+.export-header__sub{color:var(--text-soft);font-size:.92rem;margin-top:4px}
+
+.export-tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.export-tab{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-sm);
+  border:1.5px solid var(--border);background:var(--white);color:var(--text-soft);font-weight:600;
+  font-size:.9rem;cursor:pointer;transition:border-color .15s,color .15s,box-shadow .15s,background .15s}
+.export-tab:hover{border-color:var(--purple-light);color:var(--purple)}
+.export-tab.is-active{background:var(--gradient);color:var(--white);border-color:transparent;
+  box-shadow:0 8px 20px -8px rgba(75,0,130,.5)}
+
+.export-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+@media (max-width:900px){.export-grid{grid-template-columns:1fr}}
+
+.export-form__row{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.export-form__row label{font-size:.82rem;font-weight:600;color:var(--text-soft)}
+.export-form__row select,.export-form__row input[type="date"],.export-form__row input[type="search"]{
+  border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px;background:var(--white);
+  color:var(--text);font-size:.9rem;font-family:var(--font);transition:border-color .15s,box-shadow .15s}
+.export-form__row select:focus,.export-form__row input:focus{outline:none;border-color:var(--purple-light);
+  box-shadow:0 0 0 3px rgba(123,63,179,.15)}
+.export-form__two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.export-form__hint{font-size:.78rem;color:var(--text-faint)}
+
+.format-group{display:flex;gap:10px;flex-wrap:wrap}
+.format-option{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-pill);
+  border:1.5px solid var(--border);background:var(--white);color:var(--text-soft);font-weight:600;font-size:.85rem;
+  cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.format-option:hover{border-color:var(--purple-light)}
+.format-option input{accent-color:var(--purple)}
+.format-option.is-active{background:var(--lavender-soft);border-color:var(--purple-light);color:var(--purple)}
+
+.checkbox-row{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-soft)}
+.checkbox-row input{accent-color:var(--purple);width:16px;height:16px}
+
+.preview-card{position:sticky;top:0}
+.preview-card__title{font-size:.78rem;font-weight:700;letter-spacing:.03em;color:var(--text-faint);
+  text-transform:uppercase;margin-bottom:14px}
+.preview-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);
+  font-size:.86rem}
+.preview-row:last-of-type{border-bottom:none}
+.preview-row__label{color:var(--text-soft)}
+.preview-row__value{font-weight:600;color:var(--text);text-align:right}
+.preview-count{font-size:1.8rem;font-weight:800;color:var(--purple-deep);margin:14px 0 4px}
+.preview-count__label{font-size:.78rem;color:var(--text-soft)}
+
+.export-actions{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+
+.export-status{margin-top:14px}

@@ -6,6 +6,7 @@ const NAV=[
   {href:'settings.html',label:'Membership Settings',icon:'💳'},
   {href:'leads.html',label:'Leads',icon:'📋'},
   {href:'testimonials.html',label:'Testimonials',icon:'🎬'},
+  {href:'export-center.html',label:'Export Center',icon:'⤓'},
 ];
 
 export function renderShell({activeHref,title,admin}){

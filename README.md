@@ -32,6 +32,7 @@ If you serve this on a different port/origin, update `API_BASE_URL` in
 | `leads.html` | Paginated, searchable, filterable lead list |
 | `lead-detail.html` | Full lead detail, status transitions, internal notes |
 | `testimonials.html` | Manage Bunny.net-hosted video testimonials: add, edit, preview, publish/unpublish, reorder, delete |
+| `export-center.html` | Export Center (Phase 8) — export leads, payments, and business reports as PDF, Excel, or CSV, with date-range and status filters and a live record-count preview. See `../server/docs/exports.md`. |
 
 ## Testimonials (Phase 4)
 
