@@ -1,0 +1,45 @@
+/* Styles specific to the Business Analytics dashboard. Reuses the design
+   tokens from variables.css. */
+
+.analytics-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+.analytics-header__sub{color:var(--text-soft);font-size:.9rem;margin:2px 0 0}
+.analytics-header__meta{color:var(--text-soft);font-size:.8rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.filter-bar select,.filter-bar input[type=date]{border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;background:var(--white);color:var(--text)}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{outline:none;border-color:var(--purple-light);box-shadow:0 0 0 3px rgba(123,63,179,.15)}
+.filter-bar .custom-range{display:none;gap:8px;align-items:center}
+.filter-bar .custom-range.is-visible{display:flex}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-bottom:22px}
+.kpi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 22px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.kpi-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient)}
+.kpi-card__title{font-size:.76rem;color:var(--text-soft);font-weight:600;letter-spacing:.02em;display:flex;align-items:center;gap:6px}
+.kpi-card__value{font-size:1.85rem;font-weight:700;color:var(--purple-deep);margin-top:8px;line-height:1.1;letter-spacing:-.02em}
+.kpi-card__change{font-size:.8rem;margin-top:8px;display:inline-flex;align-items:center;gap:4px;font-weight:600}
+.kpi-card__change--up{color:var(--success)}
+.kpi-card__change--down{color:var(--danger)}
+.kpi-card__change--flat{color:var(--text-soft)}
+.kpi-card__hint{font-size:.72rem;color:var(--text-faint);margin-top:4px}
+
+.chart-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+@media (max-width:900px){.chart-grid{grid-template-columns:1fr}}
+
+.chart-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.chart-toolbar .interval-toggle{display:flex;gap:4px;background:var(--lavender-soft);border-radius:var(--radius-pill);padding:3px}
+.interval-toggle button{border:none;background:none;padding:6px 14px;border-radius:var(--radius-pill);font-size:.8rem;cursor:pointer;color:var(--text-soft);font-weight:500;transition:background .15s,color .15s}
+.interval-toggle button.is-active{background:var(--white);color:var(--purple-deep);font-weight:600;box-shadow:var(--shadow-sm)}
+
+.activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:900px){.activity-grid{grid-template-columns:1fr}}
+.activity-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-size:.87rem}
+.activity-item:last-child{border-bottom:none}
+.activity-item__sub{color:var(--text-soft);font-size:.78rem}
+
+.btn--export{display:inline-flex;align-items:center;gap:6px}
+.skeleton{background:linear-gradient(90deg,var(--lavender-soft) 25%,var(--lavender) 37%,var(--lavender-soft) 63%);background-size:400% 100%;animation:skeleton-loading 1.4s ease infinite;border-radius:var(--radius-sm)}
+@keyframes skeleton-loading{0%{background-position:100% 50%}100%{background-position:0 50%}}
+.skeleton--kpi{height:88px}
+.skeleton--chart{height:220px}
+
+.section-label{font-size:.72rem;color:var(--text-faint);font-weight:600;letter-spacing:.02em;margin-bottom:8px;display:block}

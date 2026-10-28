@@ -1,0 +1,50 @@
+:root{
+  /* Brand — kept exact so existing chart colors (js/charts.js) stay in sync */
+  --purple:#4B0082;
+  --purple-dark:#2E0152;
+  --purple-deep:#1C0133;
+  --purple-light:#7b3fb3;
+  --purple-tint:#8f5bc9;
+
+  --accent:#C6A15B;        /* restrained gold accent, used sparingly */
+  --accent-soft:#f6eeda;
+
+  --lavender:#e7defa;
+  --lavender-soft:#f3f0fb;
+
+  --white:#ffffff;
+  --surface:#f6f5fb;       /* app background */
+  --surface-raised:#fbfaff;
+
+  --border:#e5e1f0;
+  --border-strong:#d6cfe8;
+
+  --text:#1c1530;
+  --text-soft:#645d78;
+  --text-faint:#938ca8;
+
+  --success:#157a4a;
+  --success-bg:#e6f6ee;
+  --warn:#a3620a;
+  --warn-bg:#fdf1de;
+  --danger:#b3261e;
+  --danger-bg:#fdecea;
+  --info:#2f5fb0;
+  --info-bg:#eaf1fc;
+
+  --radius-lg:18px;
+  --radius:12px;
+  --radius-sm:8px;
+  --radius-pill:999px;
+
+  --shadow-sm:0 1px 2px rgba(28,1,51,.06);
+  --shadow:0 8px 24px -10px rgba(46,1,82,.18);
+  --shadow-lg:0 20px 48px -16px rgba(28,1,51,.28);
+
+  --gradient:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%);
+  --gradient-sidebar:linear-gradient(195deg,var(--purple-deep) 0%,var(--purple-dark) 55%,var(--purple) 100%);
+
+  --font:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+
+  --ease:cubic-bezier(.4,0,.2,1);
+}
