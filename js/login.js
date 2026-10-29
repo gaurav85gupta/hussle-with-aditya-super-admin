@@ -14,13 +14,13 @@ api.get('/admin/auth/me').then(()=>{location.href='dashboard.html'}).catch(()=>{
 form.addEventListener('submit',async(e)=>{
   e.preventDefault();
   banner.innerHTML='';
-  const email=form.email.value.trim();
+  const username=form.username.value.trim();
   const password=form.password.value;
-  if(!email||!password){showBanner('Enter both your email and password.');return}
+  if(!username||!password){showBanner('Enter both your username and password.');return}
 
   btn.disabled=true;btn.textContent='Signing in…';
   try{
-    await api.post('/admin/auth/login',{email,password});
+    await api.post('/admin/auth/login',{username,password});
     const redirectTo=sessionStorage.getItem('hwa_redirect_after_login')||'dashboard.html';
     sessionStorage.removeItem('hwa_redirect_after_login');
     location.href=redirectTo;
@@ -28,7 +28,7 @@ form.addEventListener('submit',async(e)=>{
     if(err instanceof ApiError&&err.code==='ACCOUNT_LOCKED'){
       showBanner('This account is temporarily locked after repeated failed attempts. Try again later.');
     }else if(err instanceof ApiError&&err.code==='INVALID_CREDENTIALS'){
-      showBanner('Incorrect email or password.');
+      showBanner('Incorrect username or password.');
     }else{
       showBanner(err.message||'Something went wrong. Please try again.');
     }

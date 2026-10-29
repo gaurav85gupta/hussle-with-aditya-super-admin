@@ -17,7 +17,7 @@ export function renderShell({activeHref,title,admin}){
     <aside class="sidebar">
       <div class="sidebar__brand">HUSTLE ADMIN</div>
       <nav class="sidebar__nav">${navHtml}</nav>
-      <div class="sidebar__footer">${admin?admin.email:''}</div>
+      <div class="sidebar__footer">${admin?(admin.username||admin.email||''):''}</div>
     </aside>
     <main class="main">
       <div class="topbar">
