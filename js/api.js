@@ -3,7 +3,7 @@
    - Reads the CSRF token from the non-HttpOnly csrf cookie and attaches it
      to every state-changing request, matching server/src/middleware/csrf.js.
    - Never assumes success: always checks response.ok and the `success` flag. */
-export const API_BASE_URL='https://hussle-with-aditya.onrender.com/api';
+export const API_BASE_URL='https://hustleapi.theknightclub.in/api';
 
 /* The API lives on a different site than this SPA, so the browser will not let
    this page read the API's csrf cookie. The server returns the same token in the
