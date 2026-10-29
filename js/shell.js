@@ -15,7 +15,7 @@ export function renderShell({activeHref,title,admin}){
   root.innerHTML=`
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="sidebar__brand">HUSSLE ADMIN</div>
+      <div class="sidebar__brand">HUSTLE ADMIN</div>
       <nav class="sidebar__nav">${navHtml}</nav>
       <div class="sidebar__footer">${admin?admin.email:''}</div>
     </aside>

@@ -1,4 +1,4 @@
-# Hussle With Aditya — Super Admin
+# Hustle With Aditya — Super Admin
 
 Internal admin tool: membership price management, lead management and testimonial (video) management.
 
